@@ -1,0 +1,18 @@
+plugins {
+    id "org.springframework.boot" version "2.1.8.RELEASE"
+}
+
+def currentProfile = "WEB" //"$System.env.PROFILE"
+
+dependencies {
+    implementation project(":coddify-core")
+
+    if (currentProfile == "WEB") {
+        implementation project(":coddify-web")
+    } else if (currentProfile == "ADMIN") {
+        implementation project(":coddify-admin")
+    }
+
+    runtimeOnly 'org.postgresql:postgresql'
+    implementation 'org.springframework.boot:spring-boot-starter'
+}

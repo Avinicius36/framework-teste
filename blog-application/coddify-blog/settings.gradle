@@ -1,0 +1,4 @@
+include 'coddify-core'
+include 'coddify-admin'
+include 'coddify-web'
+include 'coddify-configuration'
